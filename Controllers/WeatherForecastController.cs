@@ -32,7 +32,7 @@ namespace TheProject.Controllers
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)], 
-                NewField = "value 1"
+                NewField = "value 2"
             })
             .ToArray();
         }
