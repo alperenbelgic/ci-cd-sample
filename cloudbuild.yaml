@@ -1,0 +1,14 @@
+# https://cloud.google.com/run/docs/continuous-deployment#continuous
+
+steps:
+  # build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$the-racer-249922/[ci-cd-sample]', '.']
+  # push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$the-racer-249922/[ci-cd-sample]']
+  # Deploy container image to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'deploy', '[ci-cd-sample]', '--image', 'gcr.io/$the-racer-249922/[ci-cd-sample]', '--region', '[europe-west1]','--platform', 'managed', '--quiet']
+images:
+- gcr.io/$the-racer-249922/[ci-cd-sample]
