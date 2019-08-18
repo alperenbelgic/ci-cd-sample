@@ -20,7 +20,11 @@ namespace TheProject
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>().UseUrls(
+                        String.Concat("http://0.0.0.0:", 
+                            (Environment.GetEnvironmentVariable("PORT") ?? "8080")
+                        )
+                    );
                 });
     }
 }
