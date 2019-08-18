@@ -45,6 +45,7 @@ namespace TheProject
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
             });
         }
     }
