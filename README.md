@@ -1,1 +1,1 @@
-A sample project to build CI/CD pipeline by using ASP.NET Core, Google Cloud Build and Google Cloud Run.
+A sample project to build CI/CD pipeline by using docker, ASP.NET Core 3.0, Google Cloud Build and Google Cloud Run.
